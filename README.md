@@ -114,8 +114,105 @@ VALUES(
 
 ``` 
 
-### Atualizando os Dados 
+### Atualizando os Dados dos professores aos cursos
 ```sql 
- UPDATE cursos SET professor_id =  
+ 
+ UPDATE cursos 
+  SET professor_id = 1
+ WHERE id = 5;
+  
+ UPDATE cursos 
+  SET professor_id = 2
+ WHERE id = 4; 
 
+ UPDATE cursos 
+  SET professor_id = 3
+ WHERE id = 3; 
+
+ UPDATE cursos 
+  SET professor_id = 4
+ WHERE id = 2; 
+
+ UPDATE cursos 
+  SET professor_id = 5
+ WHERE id = 1;
+
+``` 
+
+## cadastrando alunos e notas 
+
+```sql 
+INSERT INTO alunos(nome, data_nascimento, primeira_nota, segunda_nota, curso_id) 
+VALUES( 
+    'maycon', 
+    '2007-05-12' 
+    6.00, 
+    10.00, 
+    4
+); 
+
+INSERT INTO alunos(nome, data_nascimento, primeira_nota, segunda_nota, curso_id) 
+VALUES( 
+    'Elon Musky', 
+    '1985-06-13', 
+    10.00, 
+    10.00, 
+    2
+), 
+( 
+    'Alex',
+    '1999-07-11',
+    2.00,
+    1.00,
+    1
+), 
+( 
+    'junior',
+    '1989-02-21',
+    7.00,
+    4.00,
+    3
+), 
+( 
+    'careca',
+    '1995-11-19',
+    9.00,
+    4.00,
+    5
+), 
+( 
+    'kallyne',
+    '2007-07-04',
+    2.00,
+    1.00,
+    1
+), 
+( 
+    'Raissa',
+    '2007-04-18',
+    2.00,
+    1.00,
+    3
+), 
+( 
+    'Cesar',
+    '1970-08-27',
+    10.00,
+    10.00,
+    4
+), 
+( 
+    'Mellissa',
+    '2008-07-15',
+    7.00,
+    4.00,
+    5
+), 
+( 
+    'Luis',
+    '1967-11-23',
+    2.00,
+    1.00,
+    1
+);
 ```
