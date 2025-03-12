@@ -229,7 +229,7 @@ SELECT * FROM alunos WHERE data_nascimento < '2009-01-01';
 2) Faça uma consulta que calcule a média das notas de cada aluno e as mostre com duas casas decimais.
 ```sql 
 SELECT  nome, id, ROUND(AVG((primeira_nota + segunda_nota) / 2)) AS "media das notas"  
-FROM alunos WHERE id = 1 AND nome = 'maycon'
+FROM alunos -- WHERE id = 1 AND nome = 'maycon'
 GROUP BY nome, id ;  
 
 ``` 
@@ -267,8 +267,13 @@ alunos.nome AS Nome,
 cursos.titulo AS Curso ,  
 cursos.carga_horaria AS Duração  
 FROM alunos
-INNER JOIN cursos ON  alunos.curso_id = cursos.id;   
-
-
+INNER JOIN cursos ON  alunos.curso_id = cursos.id;     
 ```
 
+7) Faça uma consulta que mostre o nome dos professores e o título do curso que lecionam. Classifique pelo nome do professor. 
+```sql 
+SELECT 
+professores.nome AS Professor, 
+cursos.titulo AS titulo 
+FROM 
+```
