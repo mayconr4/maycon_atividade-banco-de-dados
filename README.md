@@ -245,17 +245,17 @@ SELECT nome, area_de_atuacao FROM professores WHERE area_de_atuacao = 'desenvolv
 5) Faça uma consulta que mostre a quantidade de professores que cada área ("design", "infra", "desenvolvimento") possui.
 ```sql
 SELECT area_de_atuacao, 
- COUNT(area_de atuacao) AS "quantidade de professores"  
+ COUNT(area_de_atuacao) AS "quantidade de professores"  
  FROM professores WHERE  
  area_de_atuacao = 'desenvolvimento'; 
 
 SELECT area_de_atuacao, 
- COUNT(area_de atuacao) AS "quantidade de professores"  
+ COUNT(area_de_atuacao) AS "quantidade de professores"  
  FROM professores WHERE  
  area_de_atuacao = 'design';  
 
  SELECT area_de_atuacao, 
- COUNT(area_de atuacao) AS "quantidade de professores"  
+ COUNT(area_de_atuacao) AS "quantidade de professores"  
  FROM professores WHERE  
  area_de_atuacao = 'infra';  
 
@@ -275,5 +275,22 @@ INNER JOIN cursos ON  alunos.curso_id = cursos.id;
 SELECT 
 professores.nome AS Professor, 
 cursos.titulo AS titulo 
-FROM 
+FROM professores 
+INNER JOIN cursos ON professores.curso_id = cursos.id;
+``` 
+
+8) Faça uma consulta que mostre o nome dos alunos, o título dos cursos que fazem, e o professor de cada curso. 
+```sql 
+SELECT  
+alunos.nome AS Nome,  
+cursos.titulo AS Curso , 
+professores.nome AS Professor 
+FROM alunos  
+INNER JOIN cursos ON alunos.curso_id = cursos.id
+INNER JOIN professores ON alunos.id = professores.curso_id;
+``` 
+9) Faça uma consulta que mostre a quantidade de alunos que cada curso possui. Classifique os resultados em ordem descrecente de acordo com a quantidade de alunos. 
+```sql 
+SELECT titulo  COUNT(cursos.id) AS "Quantidade de alunos" FROM cursos  ;
 ```
+
