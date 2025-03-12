@@ -235,5 +235,40 @@ GROUP BY nome, id ;
 ``` 
 3) Faça uma consulta que calcule o limite de faltas de cada curso de acordo com a carga horária. Considere o limite como 25% da carga horária. Classifique em ordem crescente pelo título do curso.
 ```sql 
+SELECT titulo,  ROUND((carga_horaria * 0.25)) AS "limite de faltas" FROM cursos ORDER BY titulo ASC;
+``` 
+
+4) Faça uma consulta que mostre os nomes dos professores que são somente da área "desenvolvimento".
+```sql 
+SELECT nome, area_de_atuacao FROM professores WHERE area_de_atuacao = 'desenvolvimento' GROUP BY nome, area_de_atuacao;  
+``` 
+5) Faça uma consulta que mostre a quantidade de professores que cada área ("design", "infra", "desenvolvimento") possui.
+```sql
+SELECT area_de_atuacao, 
+ COUNT(area_de atuacao) AS "quantidade de professores"  
+ FROM professores WHERE  
+ area_de_atuacao = 'desenvolvimento'; 
+
+SELECT area_de_atuacao, 
+ COUNT(area_de atuacao) AS "quantidade de professores"  
+ FROM professores WHERE  
+ area_de_atuacao = 'design';  
+
+ SELECT area_de_atuacao, 
+ COUNT(area_de atuacao) AS "quantidade de professores"  
+ FROM professores WHERE  
+ area_de_atuacao = 'infra';  
 
 ```
+6) Faça uma consulta que mostre o nome dos alunos, o título e a carga horária dos cursos que fazem. 
+```sql 
+SELECT 
+alunos.nome AS Nome,  
+cursos.titulo AS Curso ,  
+cursos.carga_horaria AS Duração  
+FROM alunos
+INNER JOIN cursos ON  alunos.curso_id = cursos.id;   
+
+
+```
+
