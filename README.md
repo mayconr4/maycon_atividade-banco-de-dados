@@ -215,4 +215,22 @@ VALUES(
     1.00,
     1
 );
+``` 
+
+## Etapa 4 / Final  
+
+### CRUD - Consultas
+
+1) Faça uma consulta que mostre os alunos que nasceram antes do ano 2009
+```sql   
+SELECT * FROM alunos WHERE data_nascimento < '2009-01-01';
+```  
+
+2) Faça uma consulta que calcule a média das notas de cada aluno e as mostre com duas casas decimais.
+```sql 
+SELECT  nome, id, ROUND(AVG((primeira_nota + segunda_nota) / 2)) AS "media das notas"  
+FROM alunos WHERE id = 7 AND nome = 'Raissa'
+GROUP BY nome, id ; 
+
+
 ```
