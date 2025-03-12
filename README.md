@@ -229,8 +229,11 @@ SELECT * FROM alunos WHERE data_nascimento < '2009-01-01';
 2) Faça uma consulta que calcule a média das notas de cada aluno e as mostre com duas casas decimais.
 ```sql 
 SELECT  nome, id, ROUND(AVG((primeira_nota + segunda_nota) / 2)) AS "media das notas"  
-FROM alunos WHERE id = 7 AND nome = 'Raissa'
-GROUP BY nome, id ; 
+FROM alunos WHERE id = 1 AND nome = 'maycon'
+GROUP BY nome, id ;  
 
+``` 
+3) Faça uma consulta que calcule o limite de faltas de cada curso de acordo com a carga horária. Considere o limite como 25% da carga horária. Classifique em ordem crescente pelo título do curso.
+```sql 
 
 ```
