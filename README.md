@@ -296,10 +296,26 @@ SELECT
   cursos.titulo AS Curso,
   COUNT(alunos.nome) AS Quantidade
 FROM alunos
-  JOIN cursos
+ INNER JOIN cursos
   ON alunos.curso_id = cursos.id
 GROUP BY cursos.titulo
 ORDER BY Quantidade;
+
+``` 
+
+10) Faça uma consulta que mostre o nome dos alunos, suas notas, médias, e o título dos cursos que fazem. Devem ser considerados somente os alunos de Front-End e Back-End. Mostre os resultados classificados pelo nome do aluno. 
+```sql       
+SELECT
+  alunos.nome AS Aluno,
+  alunos.primeira_nota AS "Nota 1",
+  alunos.segunda_nota AS "Nota 2",
+  (alunos.primeira_nota + alunos.segunda_nota) / 2 AS Media,
+  cursos.titulo AS Curso
+FROM alunos
+INNER JOIN cursos ON alunos.curso_id = cursos.id
+WHERE cursos.titulo IN ('Front-End', 'Back-End')
+ORDER BY alunos.nome;
+
 
 ```
 
